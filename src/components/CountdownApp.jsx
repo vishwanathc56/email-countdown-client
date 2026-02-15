@@ -273,9 +273,9 @@ function CountdownApp() {
                     {savedTimers.map(timer => (
                         <div key={timer._id} className="timer-card">
                             <strong>{new Date(timer.endDateTime).toLocaleString()}</strong><br />
-                            <a href={`http://localhost:5000/images/${timer._id}.gif`} target="_blank" rel="noreferrer">
+                            <a href={`${import.meta.env.VITE_API_BASE_URL}/images/${timer._id}.gif`} target="_blank" rel="noreferrer">
                                 <img
-                                    src={`http://localhost:5000/images/${timer._id}.gif`}
+                                    src={`${import.meta.env.VITE_API_BASE_URL}/images/${timer._id}.gif`}
                                     alt="Saved Countdown"
                                     width={timer.width || 400}
                                     height={timer.height || 100}
@@ -311,7 +311,7 @@ function CountdownApp() {
                     <h3>Preview</h3>
 
                     <img
-                        src={`http://localhost:5000/images/${savedTimerId}.gif`}
+                        src={`${import.meta.env.VITE_API_BASE_URL}/images/${savedTimerId}.gif`}
                         alt="Countdown Preview"
                         style={{ display: "block", margin: "1rem auto" }}
                     />
@@ -319,7 +319,7 @@ function CountdownApp() {
                     <h4>Embed Code</h4>
                     <textarea
                         readOnly
-                        value={`<img src="http://localhost:5000/images/${savedTimerId}.gif" alt="Countdown Timer" />`}
+                        value={`<img src="${import.meta.env.VITE_API_BASE_URL}/images/${savedTimerId}.gif" alt="Countdown Timer" />`}
                         style={{
                             width: "100%",
                             height: "70px",
